@@ -1,7 +1,7 @@
 import requests
 import streamlit as st
 
-query = st.text_input("Sreach for a GIF")
+query = st.text_input("Sreach for a GIF", value='dog')
 
 url = "https://api.giphy.com/v1/gifs/search"
 params = {'api_key':st.secrets.api_key, "q":query}
