@@ -2,8 +2,6 @@ import streamlit as st
 
 import numpy as np
 import pandas as pd
-from pages.page_01 import page1
-from pages.page_02 import page2
 
 st.markdown("""# This is a header
 ## This is a sub header

@@ -1,9 +1,10 @@
-import pandas as pd
+import requests
 import streamlit as st
 
-def page2():
-    st.markdown("""
-                #This is the content of my page 02
-                """)
-    
-page2()
+query = st.text_input("Sreach for a GIF")
+
+url = "https://api.giphy.com/v1/gifs/search"
+params = {'api_key':st.secrets.api_key, "q":query}
+response = requests.get(url, params=params).json()
+
+st.write(f"<iframe src={response['data'][0]['embed_url']}>", unsafe_allow_html=True)
